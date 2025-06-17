@@ -1,0 +1,201 @@
+
+/* TODO:
+1. make the name go to the middle
+2. make the choose file button look cool
+3. make all buttons look cool
+4. add a background 
+5. (?) add an option to choose bg color and save it
+6. (?) add an option to choose shape and change it's color
+
+ */
+.app {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  padding: 10px;
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  display: block;
+  position: relative;
+}
+.button-group {
+  display: flexbox;
+  direction: ltr;
+}
+.title-input {
+  font-size: 1.2em;
+  padding: 5px;
+  width: 250px;
+  position: relative;
+  text-align: center;
+  background-color: aqua;
+  border-color: aqua;
+}
+
+.button-group button {
+  display: flexbox;
+  margin-right: 0px;
+  padding: 6px 12px;
+  font-size: 1em;
+}
+.button-group .import-input {
+  display: flexbox;
+  padding: 6px 12px;
+  font-size: 1em;
+  background-color: aqua;
+  border-color: aqua;
+  margin: auto;
+  
+}
+.import-input {
+  display: flexbox;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+}
+
+.sidebar {
+  width: 150px;
+  background-color: #ececec;
+  padding: 10px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  margin-left: 40px;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 1em;
+}
+.canvas {
+  flex: 1;
+  position: relative;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  cursor: crosshair;
+}
+
+.shape {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.shape.circle {
+  border-radius: 50%;
+  background-color: lightblue;
+}
+
+.shape.square {
+  background-color: lightgreen;
+}
+
+.shape.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 35px solid pink;
+  background: none;
+}
+
+.shape.hsegment {
+  border-top: 5px solid black;
+  background: none;
+}
+
+.shape.vsegment {
+  border-left: 5px solid black;
+  background: none;
+  
+}
+
+.footer {
+  background-color: #f3f3f3;
+  text-align: center;
+  padding: 10px;
+}
+
+.shape-button {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  border: 2px solid #333;
+  background: white;
+}
+
+.shape-button:active {
+  cursor: grabbing;
+}
+
+.shape-button.circle {
+  border-radius: 50%;
+  background-color: lightblue;
+}
+
+.shape-button.square {
+  border-radius: 0;
+  background-color: lightgreen;
+}
+
+.shape-button.triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 35px solid pink;
+  background: none;
+}
+.shape-button.hsegment {
+  border-top: 5px solid black;
+  background: none;
+
+}
+.shape-button.vsegment {
+  border-left: 5px solid black;
+  background: none;
+}
+
+.shape-menu-item {
+  margin: 15px auto;
+  cursor: grab;
+  box-sizing: border-box;
+  background: white;
+}
+
+.shape-menu-item:active {
+  cursor: grabbing;
+}
+
+.shape-menu-item.shape {
+  width: 40px;
+  height: 40px;
+  position: static;
+}
+
+button {
+  background-color: aqua;
+  border-color: aqua;
+}
+input{
+  text-decoration-color: seashell;
+}
