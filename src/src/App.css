@@ -1,15 +1,10 @@
-
-/* TODO:
-1. make the name go to the middle
-2. make the choose file button look cool
-3. make all buttons look cool
-4. add a background 
-5. (?) add an option to choose bg color and save it
-6. (?) add an option to choose shape and change it's color
-
- */
-.app {
+body {
+  margin: 0;
   font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #f0f4f8, #d9e4f5); /* Background gradient */
+}
+
+.app {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -19,44 +14,66 @@
   padding: 10px;
   background-color: #f3f3f3;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-.title {
-  display: block;
+  justify-content: center;
   position: relative;
 }
-.button-group {
-  display: flexbox;
-  direction: ltr;
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
 }
+
 .title-input {
   font-size: 1.2em;
   padding: 5px;
   width: 250px;
-  position: relative;
   text-align: center;
   background-color: aqua;
-  border-color: aqua;
+  border: 2px solid aqua;
+  border-radius: 6px;
 }
 
-.button-group button {
-  display: flexbox;
-  margin-right: 0px;
-  padding: 6px 12px;
-  font-size: 1em;
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 10px;
 }
-.button-group .import-input {
-  display: flexbox;
-  padding: 6px 12px;
+
+button,
+.button-groupbutton,
+.import-input,
+.file-upload {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 8px16px;
   font-size: 1em;
-  background-color: aqua;
-  border-color: aqua;
-  margin: auto;
-  
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: bold;
 }
-.import-input {
-  display: flexbox;
+
+button:hover,
+.button-groupbutton:hover,
+.import-input:hover,
+.file-upload:hover {
+  transform: scale(1.05);
+  box-shadow: 04px8px rgba(0, 0, 0, 0.2);
+}
+
+.file-upload {
+  display: inline-block;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  color: white;
+}
+
+.file-uploadinput[type="file"] {
+  display: none;
 }
 
 .main {
@@ -70,18 +87,19 @@
   padding: 10px;
 }
 
-.sidebar h3 {
+.sidebarh3 {
   margin-top: 0;
-  margin-left: 40px;
+  text-align: center;
 }
 
-.sidebar button {
+.sidebarbutton {
   display: block;
   width: 100%;
   margin-bottom: 10px;
   padding: 8px;
   font-size: 1em;
 }
+
 .canvas {
   flex: 1;
   position: relative;
@@ -115,6 +133,7 @@
   background: none;
 }
 
+
 .shape.hsegment {
   border-top: 5px solid black;
   background: none;
@@ -123,29 +142,25 @@
 .shape.vsegment {
   border-left: 5px solid black;
   background: none;
-  
-}
-
-.footer {
-  background-color: #f3f3f3;
-  text-align: center;
-  padding: 10px;
+ 
 }
 
 .shape-button {
   width: 40px;
   height: 40px;
-  margin: 10px;
+  margin: 10px auto;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: grab;
   border: 2px solid #333;
   background: white;
+  transition: transform 0.2s;
 }
 
 .shape-button:active {
   cursor: grabbing;
+  transform: scale(1.05);
 }
 
 .shape-button.circle {
@@ -154,25 +169,24 @@
 }
 
 .shape-button.square {
-  border-radius: 0;
   background-color: lightgreen;
 }
 
 .shape-button.triangle {
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 35px solid pink;
-  background: none;
+  clip-path: polygon(50%0%, 0%100%, 100%100%);
+  background-color: pink;
 }
-.shape-button.hsegment {
-  border-top: 5px solid black;
-  background: none;
 
+.shape-button.hsegment {
+  width: 40px;
+  height: 5px;
+  background-color: black;
 }
+
 .shape-button.vsegment {
-  border-left: 5px solid black;
-  background: none;
+  width: 5px;
+  height: 40px;
+  background-color: black;
 }
 
 .shape-menu-item {
@@ -192,10 +206,16 @@
   position: static;
 }
 
-button {
-  background-color: aqua;
-  border-color: aqua;
+.footer {
+  background-color: #f3f3f3;
+  text-align: center;
+  padding: 10px;
 }
-input{
-  text-decoration-color: seashell;
+
+#bg-color-picker,
+#shape-color-picker {
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
 }
